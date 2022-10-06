@@ -48,7 +48,10 @@ describe "#my_transpose" do
         expect{my_transpose(1)}.to raise_error(ArgumentError)
         expect{my_transpose("string")}.to raise_error(ArgumentError)
     end
-    it "should return an argument error if the argument an array that is not a square matrix" do
+    it "should return an argument error if the argumment is a 1D array" do
+        expect{my_transpose([2,3,4])}.to raise_error(ArgumentError)
+    end
+    it "should return an argument error if the argument is an array that is not a square matrix" do
         expect{my_transpose([[1,2,3],[1,2,3]])}.to raise_error(ArgumentError)
     end
 end

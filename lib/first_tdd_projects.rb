@@ -19,10 +19,12 @@ class Array
     
 end
 
-arr = 1 # [[1,2,3],[1,2,3],[1,2,3]]
+
 
 def my_transpose(arr)
     raise ArgumentError if !arr.is_a?(Array)
+
+    raise ArgumentError if arr.any? {|subarr| !subarr.is_a?(Array)}
 
     raise ArgumentError if !arr.all? {|subarr| subarr.length == arr.length}
 
@@ -37,8 +39,6 @@ def my_transpose(arr)
     new_arr
 end
 
-
-
 arr_2 = 'hi' #[1,2,3]
 
 def uniq(arr_2)
@@ -46,3 +46,6 @@ def uniq(arr_2)
     # raise 'Sample Error' if !arr.is_a?(Array)
 end
 
+arr = [1,2,3] # [[1,2,3],[1,2,3],[1,2,3]]
+
+# p my_transpose(arr)
