@@ -19,9 +19,12 @@ class Array
     
 end
 
-arr = [[1,2,3],[1,2,3],[1,2,3], [1,2,3]]
+arr = 1 # [[1,2,3],[1,2,3],[1,2,3]]
 
 def my_transpose(arr)
+    raise ArgumentError if !arr.is_a?(Array)
+
+    raise ArgumentError if !arr.all? {|subarr| subarr.length == arr.length}
 
     new_arr = Array.new(arr.length) { Array.new(arr.length) }
 

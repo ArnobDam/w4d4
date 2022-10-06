@@ -39,9 +39,17 @@ describe "#my_transpose" do
     #     expect{ my_transpose([1,2,3])}.to raise_error
     #     expect{ my_transpose(1)}.to raise_error
     # end
-    it "should return a square matrix with the same dimensions with the rows and columns switched" do 
+    it "should return a matrix with the rows and columns switched" do 
         expect(my_transpose(arr)).to eq([[1,4,7],[2,5,8],[3,6,9]])
         # expect(my_transpose(arr).length).to eq(arr.length)
+    end
+
+    it "shoudl return an argument error if the argument is not an array" do 
+        expect{my_transpose(1)}.to raise_error(ArgumentError)
+        expect{my_transpose("string")}.to raise_error(ArgumentError)
+    end
+    it "should return an argument error if the argument an array that is not a square matrix" do
+        expect{my_transpose([[1,2,3],[1,2,3]])}.to raise_error(ArgumentError)
     end
 end
 
