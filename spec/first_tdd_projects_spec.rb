@@ -44,7 +44,7 @@ describe "#my_transpose" do
         # expect(my_transpose(arr).length).to eq(arr.length)
     end
 
-    it "shoudl return an argument error if the argument is not an array" do 
+    it "should return an argument error if the argument is not an array" do 
         expect{my_transpose(1)}.to raise_error(ArgumentError)
         expect{my_transpose("string")}.to raise_error(ArgumentError)
     end
@@ -56,11 +56,18 @@ describe "#my_transpose" do
     end
 end
 
-# describe "#stock_picker" do
-#     subject(:stocks) {[5,6,0,2,1,3,2]}
+describe "#stock_picker" do
+    subject(:stocks) {[5,6,0,2,1,3,2]}
+    it "should return return an array including the pair of indeces whose elements return the highest difference" do
+        stocks = [0,2,1,3,1]
+        expect(stock_picker(stocks)).to eq([0,3])
+    end
 
+    it "should not return a pair whose first index is greater than the second index" do
+        expect(stock_picker(stocks)).to_not eq([2,1])
+    end
 
-# end
+end
 
 describe "#uniq" do
 subject(:arr) { [1,2,3,2,1]}
@@ -73,4 +80,5 @@ subject(:arr) { [1,2,3,2,1]}
         expect{ uniq(1) }.to raise_error(ArgumentError)
     end
 end
+
 

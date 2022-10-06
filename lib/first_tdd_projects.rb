@@ -49,3 +49,31 @@ end
 arr = [1,2,3] # [[1,2,3],[1,2,3],[1,2,3]]
 
 # p my_transpose(arr)
+
+def stock_picker(stocks)
+    biggest_difference = 0
+    index_arr = []
+
+    (0...stocks.length-1).each do |idx1|
+        (idx1+1...stocks.length).each do |idx2|
+            difference = stocks[idx2] - stocks[idx1]
+            if difference > biggest_difference
+                biggest_difference = difference
+                index_arr = [idx1, idx2]
+            end
+        end
+    end
+
+    # uncomment below code and comment out lines 57-65 to run case where you sell the stock before dying
+    # (0...stocks.length).each do |idx1|
+    #     (0...stocks.length).each do |idx2|
+    #         difference = stocks[idx2] - stocks[idx1]
+    #         if difference > biggest_difference
+    #             biggest_difference = difference
+    #             index_arr = [idx1, idx2]
+    #         end
+    #     end
+    # end
+
+    index_arr
+end
