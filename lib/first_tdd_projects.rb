@@ -64,7 +64,7 @@ def stock_picker(stocks)
         end
     end
 
-    # uncomment below code and comment out lines 57-65 to run case where you sell the stock before dying
+    # uncomment below code and comment out lines 57-65 to run case where you sell the stock before buying
     # (0...stocks.length).each do |idx1|
     #     (0...stocks.length).each do |idx2|
     #         difference = stocks[idx2] - stocks[idx1]
